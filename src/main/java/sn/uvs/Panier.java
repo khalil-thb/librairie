@@ -1,13 +1,17 @@
 package sn.uvs;
 
-public class Panier {
+import java.util.List;
 
-	public void add(Livre livre) {
-		
+public class Panier {
+	
+	private List<Livre> livres;
+	
+	public Panier(List<Livre> livres) {
+		this.livres = livres;
 	}
 
-	public Object taille() {
-		return 1;
+	public int taille() {
+		return livres.size();
 	}
 
 }
