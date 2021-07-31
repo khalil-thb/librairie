@@ -12,20 +12,22 @@ public class Panier {
 		this.elementsDansLePanier = new ArrayList<>();
 	}
 
-	public void ajouter(Livre... livresAAcheter) {
-		for (Livre livre : livresAAcheter) {
-			elementsDansLePanier.add(livre);
-		}
-		if (elementsDansLePanier.size() == 1) {
-			this.prixDuPanier = 8;
-		}
-		if (elementsDansLePanier.size() == 2 && elementsDansLePanier.get(0).getName().equals(elementsDansLePanier.get(1).getName())) {
-			this.prixDuPanier = 16 - (16 * 0.05);
-		}
-	}
-
 	public int recupererNombreDeLivres() {
 		return elementsDansLePanier.size();
+	}
+
+	public void ajouter(Livre livreAAcheter, int quantite) {
+		elementsDansLePanier.add(livreAAcheter);
+		double prix = livreAAcheter.getPrix();
+		if (quantite == 1) {
+			prixDuPanier = prixDuPanier + prix;
+		}
+		if(quantite == 2) {
+			prixDuPanier = (prix * quantite) - (prix * quantite * 0.05);
+		}
+		if (quantite >= 3) {
+			prixDuPanier = (prix * quantite) - (prix * quantite * 0.25);
+		}
 	}
 
 }

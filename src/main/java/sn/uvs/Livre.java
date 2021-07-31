@@ -2,7 +2,7 @@ package sn.uvs;
 
 public class Livre {
 	
-	private double prix = 8;
+	private static double prix = 8;
 	private String name;
 
 	public Livre(String nomLivre) {
@@ -11,6 +11,10 @@ public class Livre {
 
 	public String getName() {
 		return name;
+	}
+	
+	public double getPrix() {
+		return prix;
 	}
 
 }

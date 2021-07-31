@@ -8,13 +8,20 @@ import sn.uvs.Livre;
 import sn.uvs.Panier;
 
 class AjouterLivresDansLePanierTest {
+	
+	Livre livre1 = new Livre("Clean Code");
+	Livre livre2 = new Livre("OCA Java SE 8 Programmer");
+	Livre livre3 = new Livre("Le Coran");
+	Livre livre4 = new Livre("Comment se faire des amis");
+	Livre livre5 = new Livre("Sidi et Rama");
+	
 
 	@Test
 	void testAjoutDUnLivreDansLePanier() {
 		
 		Panier panier = new Panier();
 		
-		panier.ajouter(new Livre("Clean Code"));
+		panier.ajouter(livre1, 1);
 
 		assertThat(panier.recupererNombreDeLivres()).isEqualTo(1);
 	}
@@ -23,11 +30,8 @@ class AjouterLivresDansLePanierTest {
 	void testAjoutDeDeuxLivresDansLePanier() {
 		Panier panier = new Panier();
 		
-		Livre cleanCode = new Livre("Clean Code");
-		Livre certificationJava = new Livre("OCA Java SE 8 Programmer");
-		Livre coran = new Livre("Le Coran");
-		
-		panier.ajouter(cleanCode, certificationJava);
+		panier.ajouter(livre1, 3);
+		panier.ajouter(livre2, 1);
 		
 		assertThat(panier.recupererNombreDeLivres()).isEqualTo(2);	
 	}
@@ -35,17 +39,11 @@ class AjouterLivresDansLePanierTest {
 	
 	@Test
 	void testAjoutDeNLivresDansLePanier() {
-		// les livres de la bibliotheques
-		Livre cleanCode = new Livre("Clean Code");
-		Livre certificationJava = new Livre("OCA Java SE 8 Programmer");
-		Livre commentSeFaireDesAmis = new Livre("Comment se faire des amis");
-		Livre sidiEtRama = new Livre("Sidi et Rama");
-		Livre voyageNocturne = new Livre("Voyage Nocturne");
-		Livre apprendreACoder = new Livre("Apprendre à coder facilement");
-		
 		Panier panier = new Panier();
 		
-		panier.ajouter(cleanCode, certificationJava, apprendreACoder);
+		panier.ajouter(livre1, 1);
+		panier.ajouter(livre2, 1);
+		panier.ajouter(livre3, 1);
 		
 		assertThat(panier.recupererNombreDeLivres()).isEqualTo(3);	
 	}
