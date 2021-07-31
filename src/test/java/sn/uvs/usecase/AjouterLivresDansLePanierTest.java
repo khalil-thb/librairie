@@ -16,7 +16,7 @@ class AjouterLivresDansLePanierTest {
 		
 		panier.ajouter(new Livre("Clean Code"));
 
-		assertThat(panier.taille()).isEqualTo(1);
+		assertThat(panier.recupererNombreDeLivres()).isEqualTo(1);
 	}
 	
 	@Test
@@ -29,7 +29,7 @@ class AjouterLivresDansLePanierTest {
 		
 		panier.ajouter(cleanCode, certificationJava);
 		
-		assertThat(panier.taille()).isEqualTo(2);	
+		assertThat(panier.recupererNombreDeLivres()).isEqualTo(2);	
 	}
 	
 	
@@ -47,6 +47,6 @@ class AjouterLivresDansLePanierTest {
 		
 		panier.ajouter(cleanCode, certificationJava, apprendreACoder);
 		
-		assertThat(panier.taille()).isEqualTo(3);	
+		assertThat(panier.recupererNombreDeLivres()).isEqualTo(3);	
 	}
 }
