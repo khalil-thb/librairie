@@ -23,10 +23,10 @@ public class Panier {
 			prixDuPanier = prixDuPanier + prix;
 		}
 		if(quantite == 2) {
-			prixDuPanier = (prix * quantite) - (prix * quantite * 0.05);
+			prixDuPanier = prixDuPanier + (prix * quantite) - (prix * quantite * 0.05);
 		}
 		if (quantite >= 3) {
-			prixDuPanier = (prix * quantite) - (prix * quantite * 0.25);
+			prixDuPanier = prixDuPanier + (prix * quantite) - (prix * quantite * 0.25);
 		}
 	}
 
